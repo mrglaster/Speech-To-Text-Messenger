@@ -49,7 +49,7 @@ public class avatar extends AppCompatActivity {
         @Override
         protected Object doInBackground(Object[] objects) {
             if (encoderd_picture != null) {
-                String set_server_url = "http://194.176.114.21:8010";
+                String set_server_url = "YOUR ADRESS!";
                 URL url1 = null;
                 try {
                     url1 = new URL(set_server_url);
@@ -97,7 +97,6 @@ public class avatar extends AppCompatActivity {
                     }
                     if (response != null) {
                         response.toStringAvatar();
-                        Log.i("AVA_RESPONSE",response.toStringAvatar());
                         urlConnection.disconnect();
                         if (response.status != "-1") {
 
