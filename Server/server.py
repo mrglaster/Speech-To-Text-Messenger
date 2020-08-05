@@ -17,7 +17,7 @@ lastmess = {}
 avatars = {}
 
 
-HOST = "194.176.114.21"
+HOST = "YOUR HOST
 PORT = 8010
 FILE_PREFIX = "."
 
