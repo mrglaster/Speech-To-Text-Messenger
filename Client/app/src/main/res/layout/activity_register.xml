@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    tools:context=".RegisterActivity">
+
+<TextView
+android:id="@+id/textView2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="РЕГИСТРАЦИЯ"
+android:textSize="31sp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.444"
+app:layout_constraintLeft_toLeftOf="parent"
+app:layout_constraintRight_toRightOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintVertical_bias="0.043" />
+
+<TextView
+android:id="@+id/textView"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="48dp"
+android:layout_marginLeft="48dp"
+android:layout_marginTop="108dp"
+android:layout_marginEnd="8dp"
+android:layout_marginRight="8dp"
+android:text="ЛОГИН"
+android:textSize="21dp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.066"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+
+<EditText
+android:id="@+id/login"
+android:layout_width="210dp"
+android:layout_height="36dp"
+android:layout_marginStart="64dp"
+android:layout_marginLeft="64dp"
+android:layout_marginTop="8dp"
+android:layout_marginEnd="8dp"
+android:layout_marginRight="8dp"
+android:layout_marginBottom="8dp"
+android:ems="10"
+android:inputType="textPersonName"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.0"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textView"
+app:layout_constraintVertical_bias="0.0" />
+
+<TextView
+android:id="@+id/textView3"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginTop="24dp"
+android:layout_marginEnd="8dp"
+android:layout_marginRight="8dp"
+android:text="ПАРОЛЬ"
+android:textSize="21sp"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.221"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/login" />
+
+<EditText
+android:id="@+id/password"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginEnd="8dp"
+android:layout_marginRight="8dp"
+android:ems="10"
+android:inputType="textPassword"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.417"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+<TextView
+android:id="@+id/textView4"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="64dp"
+android:layout_marginLeft="64dp"
+android:layout_marginTop="72dp"
+android:text="PIN-КОД"
+android:textSize="21sp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+<EditText
+android:id="@+id/pin"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginEnd="8dp"
+android:layout_marginRight="8dp"
+android:ems="10"
+android:inputType="numberPassword"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.379"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+<Button
+android:id="@+id/button"
+android:layout_width="306dp"
+android:layout_height="45dp"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginTop="8dp"
+android:layout_marginEnd="8dp"
+android:layout_marginRight="8dp"
+android:layout_marginBottom="8dp"
+android:text="РЕГИСТРАЦИЯ"
+    android:onClick="onRegister"
+
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.662"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/pin"
+app:layout_constraintVertical_bias="0.226"
+    />
+
+<Button
+android:id="@+id/button2"
+android:layout_width="312dp"
+android:layout_height="39dp"
+android:layout_marginStart="8dp"
+android:layout_marginLeft="8dp"
+android:layout_marginTop="8dp"
+android:layout_marginEnd="8dp"
+android:layout_marginRight="8dp"
+android:layout_marginBottom="8dp"
+android:text="У МЕНЯ УЖЕ ЕСТЬ АККАУНТ"
+    android:onClick="toLogin"
+
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintHorizontal_bias="0.638"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@+id/button"
+app:layout_constraintVertical_bias="0.05" />
+</android.support.constraint.ConstraintLayout>

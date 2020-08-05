@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+
+ext {
+    supportLibraryVersion = '25.0.0'
+    grpcVersion = '1.4.0'
+}
+def supportLibraryVersion = "25.0.0"
+def grpcVersion = "1.4.0"
+android {
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libassmidi.so'
+        pickFirst 'lib/x86/libassmidi.so'
+        exclude  "META-INF/INDEX.LIST"
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
+    compileSdkVersion 28
+    flavorDimensions "default"
+    defaultConfig {
+        applicationId "com.example.sttmmessenger"
+        minSdkVersion 15
+        multiDexEnabled true
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    signingConfigs {
+        release {
+            storeFile file(project.properties.storeFile)
+            storePassword project.properties.storePassword
+            keyAlias project.properties.keyAlias
+            keyPassword project.properties.keyPassword
+        }
+        productFlavors {
+            dev {
+                // Minimum version with platform multi-dex support
+                minSdkVersion 21
+            }
+            prod {
+                // Minimum version that can run gRPC (TLS extension)
+                minSdkVersion 16
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.2'
+        resolutionStrategy.force "com.android.support:support-annotations:$supportLibraryVersion"
+    }
+}
+
+
+dependencies {
+    //annotationProcessor 'com.google.auto.value:auto-value:1.5.2'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation files('libs/commons-io-2.6.jar')
+    compile project(path: ':AudioWavRecorderModuleForSTTM')
+   
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
+}
+
