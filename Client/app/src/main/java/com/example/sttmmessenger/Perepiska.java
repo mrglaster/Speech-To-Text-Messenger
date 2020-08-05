@@ -132,7 +132,7 @@ public class Perepiska extends AppCompatActivity {
         }
         @Override
         protected Object doInBackground(Object[] objects) {
-            String set_server_url = "http://194.176.114.21:8010";
+            String set_server_url = "YOUR ADRESS!";
             URL url1 = null;
             try {
                 url1 = new URL(set_server_url);
@@ -198,7 +198,7 @@ public void GetFile(View view){
         }}
         @Override
         protected Object doInBackground(Object[] objects) {
-            String set_server_url = "http://194.176.114.21:8010";
+            String set_server_url = "YOUR ADRESS!";
             URL url1 = null;
             try {
                 url1 = new URL(set_server_url);
@@ -399,7 +399,7 @@ if(data!=null) {
     b64file = new String(encoded);
     b64filereso = getExtension(filepath);
     if (b64Image.length() < 10)
-        messg_text.setText("[ПРИЛОЖЕН ФАЙЛ с расширением ." + b64filereso + "Нажмите, чтобы сохранить] " + messg_text.getText());
+        messg_text.setText("[ПРИЛОЖЕН ФАЙЛ с расширением ." + b64filereso + ". Нажмите, чтобы сохранить] " + messg_text.getText());
 }
 
                     }
