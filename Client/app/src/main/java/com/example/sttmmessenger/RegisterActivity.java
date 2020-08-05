@@ -60,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
             String nickname = loginr.getText().toString();
             String password = passwordR.getText().toString();
             String pin = pinR.getText().toString();
-            String set_server_url = "http://194.176.114.21:8010";
+            String set_server_url = "YOUR ADRESS!";
             URL url1 = null;
             try {
                 url1 = new URL(set_server_url);
